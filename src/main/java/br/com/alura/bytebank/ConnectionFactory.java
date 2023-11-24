@@ -17,9 +17,9 @@ public class ConnectionFactory {
 
     private HikariDataSource createDataSource() {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:sqlserver://192.100.100.132;databaseName=treinamento_java;encrypt=false;");
-        config.setUsername("java");
-        config.setPassword("Java@123");
+        config.setJdbcUrl("jdbc:sqlserver://${DB_HOST};databaseName=${DB_NAME};encrypt=false;");
+        config.setUsername("${DB_USER}");
+        config.setPassword("DB_PASSWORD");
         config.setMaximumPoolSize(10);
 
         return new HikariDataSource(config);
